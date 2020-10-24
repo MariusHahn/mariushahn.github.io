@@ -1,0 +1,29 @@
+---
+layout: page
+title: Curriculum Vitae
+permalink: /cv/
+---
+
+
+<section class="post-list">
+    <div class="container">
+
+      {% assign work_experiences = site.posts | where: "categories", "work" %}
+
+      <h2>Experience</h2>
+      {% for work_experience in work_experiences %}
+        {% unless work_experience.next %}
+          <span class="category-title">{{ work_experience.start }} – {{ work_experience.end }} </span>
+        {% endunless %}
+        <a href="{{ work_experience.url | prepend: site.baseurl | prepend: site.url }}">
+        <article class="post-item">
+          <h3 class="article-title">{{ work_experience.role }}</h3>
+          <span class="post-meta date-label">{{ work_experience.company }}</span>
+        </article>
+    </a>
+      {% endfor %}
+      <h2>Education</h2>
+    </div>
+
+  
+  </section>
