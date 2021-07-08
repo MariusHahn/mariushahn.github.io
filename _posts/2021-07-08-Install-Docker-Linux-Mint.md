@@ -15,7 +15,7 @@ $(lsb_release -cs)
 ```
 It will return the name of the distribution. But as you are on Mint it will not return the name of the underlying Ubunutu version but the name of the Mint version. The last time I run in this problem the name was  *ulyssa*. As you can see here, there is no binary available.
 
-![docker-ubunut-release-screenshot](_posts/ubuntu-docker-releases.png)
+![docker-ubunut-release-screenshot](/assets/ubuntu-docker-releases.png)
 
 ### The Solution
 
@@ -58,10 +58,9 @@ sudo apt-get install \
 2. Add Docker’s official GPG key:
 ```bash
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
 ```
-3. Now add docker to your apt source list and replace `$(lsb_release -cs)` with the name of your underlying ubuntu distribution. In my case it was `focal`
 
+3. Now add docker to your apt source list and replace `$(lsb_release -cs)` with the name of your underlying ubuntu distribution. In my case it was `focal`.
 ```bash
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
